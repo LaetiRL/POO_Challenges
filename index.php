@@ -1,23 +1,21 @@
 <?php
-
-require_once 'Bicycle.php';
+require_once 'Vehicle.php';
 require_once 'Car.php';
+require_once 'Truck.php';
 
-$bike = new Bicycle("blue");
-$bike->setCurrentSpeed(0);
+$truck = new Truck("brown", 2, "fuel", 10);
+$truck->setCurrentSpeed(20);
+var_dump($truck);
+$truck2 = new Truck("red", 3, "fuel", 24);
+var_dump($truck2);
 
-$car1 = new Car("red",5,"fuel");
+echo $truck->isFull().'<br>';
+$truck->setLoading(10);
+echo $truck->isFull().'<br>';
 
-echo $bike->forward();
-echo '<br> Vitesse du vélo : ' . $bike->setCurrentSpeed . ' km/h' . '<br>';
-echo $bike->brake();
-echo '<br> Vitesse du vélo : ' . $bike->setCurrentSpeed . ' km/h' . '<br>';
-echo $bike->brake();
 
-echo $car1->start();
-echo '<br> Vitesse de la voiture : ' . $car1->setCurrentSpeed . ' km/h' . '<br>';
-echo $car1->forward();
-echo '<br> Vitesse de la voiture  : ' . $car1->setCurrentSpeed . ' km/h' . '<br>';
-echo $car1->brake();
-echo '<br> Vitesse de la voiture  : ' . $car1->setCurrentSpeed . ' km/h' . '<br>';
-echo $car1->brake();
+echo $truck->forward();
+echo '<br> Vitesse du camion : ' . $truck->getCurrentSpeed() . ' km/h' . '<br>';
+echo $truck->brake();
+echo '<br> Vitesse du camion : ' . $truck->getCurrentSpeed() . ' km/h' . '<br>';
+echo $truck->brake().'<br>';
