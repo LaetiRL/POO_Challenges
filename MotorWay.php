@@ -10,11 +10,11 @@ final class MotorWay extends HighWay
 
     public function addVehicle($vehicle)
     {
-        if ($vehicle instanceof Car) {
+        if ($vehicle instanceof Bicycle) {
+            echo "Ce véhicule n'est pas autorisé sur cette voie. <br>";
+        } else {
             $this->currentVehicles[] = $vehicle;
             echo print_r($vehicle)." à bien été ajoutée <br>";
-        } else {
-            echo "Ce véhicule n'est pas autorisé sur cette voie. <br>";
         }
     }
 }

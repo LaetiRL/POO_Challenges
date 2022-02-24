@@ -10,8 +10,11 @@ final class PedestrianWay extends HighWay
 
     public function addVehicle($vehicle)
     {
-        $this->currentVehicles[] = $vehicle;
-        echo print_r($vehicle)." à bien été ajouté(e)<br>";
-    }
-    
+        if ($vehicle instanceof Bicycle) {
+            $this->currentVehicles[] = $vehicle;
+            echo print_r($vehicle)." à bien été ajouté<br>";
+        } else {
+            echo "Ce véhicule n'est pas autorisé sur cette voie.<br>";
+        }
+    }   
 }
