@@ -5,6 +5,7 @@ class Car extends Vehicle
 {
     private string $energy;
     private int $energyLevel;
+    private bool $parkBrake = true;
 
     // constantes
 
@@ -48,10 +49,18 @@ class Car extends Vehicle
         $this->energyLevel = $energyLevel;
     }
 
+    public function setParkBrake($parkBrake): void
+    {
+        $this->parkBrake = $parkBrake;
+    }
+
     // methodes actions
 
-    public function start(): string
+    public function start(): void
     {
-        return "Starting...";
+        if ($this->parkBrake === true) {
+            throw new Exception("Le frein à main est enclenché !");
+        }
+        echo "Starting...";
     }
 }

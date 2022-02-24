@@ -32,3 +32,13 @@ $residentialW->addVehicle($bike1);
 var_dump($motorW);
 var_dump($pedestrianW);
 var_dump($residentialW);
+
+
+try {
+    $car1->start();
+} catch (Exception $e) {
+    $car1->setParkBrake(false);
+    echo "Put down parkbrake. Starting...<br>";
+} finally {
+    echo "Ma voiture roule comme un donut";
+}
