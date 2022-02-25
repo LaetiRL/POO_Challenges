@@ -7,6 +7,7 @@ require_once 'Vehicle.php';
 require_once 'Car.php';
 require_once 'Truck.php';
 require_once 'Bicycle.php';
+require_once 'Speedometer.php';
 
 
 $motorW = new MotorWay();
@@ -46,4 +47,7 @@ try {
 echo $bike1->switchOn();
 
 $bike1->setCurrentSpeed(11);
-echo $bike1->switchOn();
+echo $bike1->switchOn().'<br>';
+
+echo Speedometer::convertKmToMiles(10).'<br>';
+echo Speedometer::convertMilesToKm(10).'<br>';
