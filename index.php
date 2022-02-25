@@ -42,3 +42,8 @@ try {
 } finally {
     echo "Ma voiture roule comme un donut";
 }
+
+echo $bike1->switchOn();
+
+$bike1->setCurrentSpeed(11);
+echo $bike1->switchOn();
